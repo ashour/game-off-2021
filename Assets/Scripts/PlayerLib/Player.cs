@@ -1,10 +1,14 @@
 using System;
 using DG.Tweening;
+using Health;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PlayerLib
 {
-    [RequireComponent(typeof(RigidBody2dMover))]
+    [RequireComponent(
+        typeof(RigidBody2dMover),
+        typeof(HasHealth))]
     public class Player : MonoBehaviour
     {
         public static Action<PlayerState> OnStateSwitched;
@@ -15,12 +19,25 @@ namespace PlayerLib
         [SerializeField] private float _transitionDuration = 0.2f;
 
         private Vector2 _movement;
-        private RigidBody2dMover _mover;
         private bool _isTransitioning;
+
+        private RigidBody2dMover _mover;
+        private HasHealth _hasHealth;
 
         private void Awake()
         {
             _mover = GetComponent<RigidBody2dMover>();
+            _hasHealth = GetComponent<HasHealth>();
+        }
+
+        private void OnEnable()
+        {
+            _hasHealth.OnDied += Die;
+        }
+
+        private void OnDisable()
+        {
+            _hasHealth.OnDied -= Die;
         }
 
         private void Update()
@@ -75,6 +92,11 @@ namespace PlayerLib
                     OnStateSwitched?.Invoke(_currentState);
                 });
             });
+        }
+
+        private void Die()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

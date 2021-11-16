@@ -1,20 +1,23 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 namespace Weapons
 {
-    [RequireComponent(typeof(Cannon))]
     public class ShootOnInterval : MonoBehaviour
     {
         [SerializeField] private float _shotInterval = 3f;
 
-        private Cannon _cannon;
+        [SerializeField] private Cannon _cannon;
 
         private Coroutine _coroutine;
 
-        private void Awake()
+        private void OnDestroy()
         {
-            _cannon = GetComponent<Cannon>();
+            if (_coroutine != null)
+            {
+                StopTimer();
+            }
         }
 
         public void StartTimer()

@@ -1,5 +1,88 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2745320978919743610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9116329610607025036}
+  - component: {fileID: 6459907845172600639}
+  - component: {fileID: 3844376697693956540}
+  m_Layer: 16
+  m_Name: Hurtbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9116329610607025036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2745320978919743610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5792586616550579778}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &6459907845172600639
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2745320978919743610}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.08036432, y: 0.030137323}
+      - {x: 0.025124483, y: 0.24782662}
+      - {x: -0.03566401, y: 0.24519657}
+      - {x: -0.07063891, y: 0.059877176}
+      - {x: -0.3154769, y: -0.049285766}
+      - {x: -0.36780286, y: -0.0024151728}
+      - {x: -0.36823106, y: -0.1354831}
+      - {x: -0.23966801, y: -0.13296147}
+      - {x: -0.011055335, y: -0.25906113}
+      - {x: 0.13310614, y: -0.15900713}
+      - {x: 0.36570007, y: -0.1313026}
+      - {x: 0.37412798, y: -0.0023862273}
+      - {x: 0.29722023, y: -0.057620108}
+--- !u!114 &3844376697693956540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2745320978919743610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc1bfa03f124c5d8887893d643b3c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5792586615477064190
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +179,8 @@ GameObject:
   - component: {fileID: 5792586616229590516}
   - component: {fileID: 5792586616229590519}
   - component: {fileID: 5792586616229590517}
+  - component: {fileID: 3399442348741882158}
+  - component: {fileID: 7100888064800708212}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -167,6 +252,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616e903c0bdd84ed38136bc1a99f5dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3399442348741882158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792586616229590281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6774189b9c5b4525baa9b7249defc852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 5
+  _currentHealth: 0
+--- !u!114 &7100888064800708212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792586616229590281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4843cc27438d417cb2901a3b8f392c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5792586616550579781
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +310,7 @@ Transform:
   m_Children:
   - {fileID: 5792586615477064191}
   - {fileID: 8205289238498839398}
+  - {fileID: 9116329610607025036}
   m_Father: {fileID: 5792586616229590518}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

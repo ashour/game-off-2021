@@ -651,6 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shotInterval: 3
+  _cannon: {fileID: 1882072406}
 --- !u!114 &1882072406
 MonoBehaviour:
   m_ObjectHideFlags: 0
