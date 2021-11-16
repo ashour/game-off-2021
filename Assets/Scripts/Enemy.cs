@@ -1,5 +1,6 @@
 using Health;
 using UnityEngine;
+using Weapons;
 
 [RequireComponent(typeof(HasHealth))]
 public class Enemy : MonoBehaviour
@@ -9,6 +10,11 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         _hasHealth = GetComponent<HasHealth>();
+
+        foreach (var intervalShooter in GetComponentsInChildren<ShootOnInterval>())
+        {
+            intervalShooter.StartTimer();
+        }
     }
 
     private void OnEnable()

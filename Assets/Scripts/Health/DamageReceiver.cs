@@ -39,6 +39,7 @@ namespace Health
             if (damageDealer is not null)
             {
                 _hasHealth.TakeDamage(damageDealer.Damage);
+                Destroy(obj);
             }
         }
     }

@@ -9,11 +9,13 @@ namespace Weapons
         private void OnEnable()
         {
             _collisionNotifier.OnTriggered += DestroyBullet;
+            _collisionNotifier.OnCollided += DestroyBullet;
         }
 
         private void OnDisable()
         {
             _collisionNotifier.OnTriggered -= DestroyBullet;
+            _collisionNotifier.OnCollided -= DestroyBullet;
         }
 
         private static void DestroyBullet(GameObject bullet)
