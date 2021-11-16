@@ -4,9 +4,11 @@ namespace PlayerLib
 {
     public class VState : PlayerState
     {
+        [SerializeField] private Cannon _cannon;
+
         public override void PrimaryAction()
         {
-            Debug.Log("V is shooting");
+            _cannon.Fire();
         }
     }
 }
