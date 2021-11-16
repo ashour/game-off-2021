@@ -11,6 +11,7 @@ namespace PlayerLib
         typeof(HasHealth))]
     public class Player : MonoBehaviour
     {
+        public static Action<PlayerState, PlayerState> OnWillSwitchState;
         public static Action<PlayerState> OnStateSwitched;
 
         [SerializeField] private PlayerState _currentState;
@@ -72,6 +73,8 @@ namespace PlayerLib
         private void NextState(PlayerState nextState)
         {
             _isTransitioning = true;
+
+            OnWillSwitchState?.Invoke(_currentState, nextState);
 
             _currentState.transform
                 .DOScale(0, _transitionDuration / 2)

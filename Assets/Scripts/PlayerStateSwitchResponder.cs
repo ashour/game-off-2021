@@ -22,12 +22,12 @@ public class PlayerStateSwitchResponder : MonoBehaviour
     {
         switch (newState)
         {
-            case VState:
+            case PlayerVState:
                 _enabledInBugState.SetActive(false);
                 _enabledInVState.SetActive(true);
                 break;
 
-            case BugState:
+            case PlayerBugState:
                 _enabledInVState.SetActive(false);
                 _enabledInBugState.SetActive(true);
                 break;

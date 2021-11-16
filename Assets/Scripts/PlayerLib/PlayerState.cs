@@ -10,6 +10,6 @@ namespace PlayerLib
         [SerializeField] private float _movementSpeed;
         public float MovementSpeed => _movementSpeed;
 
-        public abstract void PrimaryAction();
+        public virtual void PrimaryAction() {}
     }
 }
