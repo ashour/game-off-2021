@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace PlayerLib
 {
-    public class BugState : PlayerState
+    public class PlayerBugState : PlayerState
     {
         public override void PrimaryAction()
         {

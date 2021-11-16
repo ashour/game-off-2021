@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
+  _destroyOnDamage: 1
 --- !u!114 &618548228145324503
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,7 +16,8 @@ namespace Health
 
         private void OnEnable()
         {
-            _triggerNotifiers = GetComponentsInChildren<CollisionNotifier>();
+            _triggerNotifiers =
+                GetComponentsInChildren<CollisionNotifier>(true);
 
             foreach (var notifier in _triggerNotifiers)
             {
@@ -39,7 +40,11 @@ namespace Health
             if (damageDealer is not null)
             {
                 _hasHealth.TakeDamage(damageDealer.Damage);
-                Destroy(obj);
+
+                if (damageDealer.DestroyOnDealDamage)
+                {
+                    Destroy(obj);
+                }
             }
         }
     }

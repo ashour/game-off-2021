@@ -3,7 +3,7 @@ using Weapons;
 
 namespace PlayerLib
 {
-    public class VState : PlayerState
+    public class PlayerVState : PlayerState
     {
         [SerializeField] private Cannon _cannon;
 
