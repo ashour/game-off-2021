@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5792586615477064191}
   - component: {fileID: 5792586615477064188}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 5792586616550579778}
   - component: {fileID: 5792586616550579777}
   - component: {fileID: 5792586616550579790}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: V State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8205289238498839398}
   - component: {fileID: 2151531031747392909}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

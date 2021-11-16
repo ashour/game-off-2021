@@ -15,12 +15,12 @@ TagManager:
   - Bug
   - InvisibleObstacle
   - VisibleObstacle
-  - PlayerWeapon
-  - EnemyWeapon
+  - PlayerBullet
+  - EnemyBullet
   - InvisibleEnemy
   - VisibleEnemy
-  - 
-  - 
+  - PlayerAreaBlocker
+  - BulletDestroyer
   - 
   - 
   - 

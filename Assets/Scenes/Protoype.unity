@@ -806,10 +806,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5792586616229590281, guid: c46516090cb844276a0ae8bd8dea471d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5792586616229590518, guid: c46516090cb844276a0ae8bd8dea471d, type: 3}
       propertyPath: m_RootOrder
       value: 5

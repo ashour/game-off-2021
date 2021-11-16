@@ -7,7 +7,7 @@ namespace Health
     {
         private HasHealth _hasHealth;
 
-        private TriggerNotifier[] _triggerNotifiers;
+        private CollisionNotifier[] _triggerNotifiers;
 
         private void Awake()
         {
@@ -16,7 +16,7 @@ namespace Health
 
         private void OnEnable()
         {
-            _triggerNotifiers = GetComponentsInChildren<TriggerNotifier>();
+            _triggerNotifiers = GetComponentsInChildren<CollisionNotifier>();
 
             foreach (var notifier in _triggerNotifiers)
             {
