@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player
+namespace PlayerLib
 {
     public class VState : PlayerState
     {

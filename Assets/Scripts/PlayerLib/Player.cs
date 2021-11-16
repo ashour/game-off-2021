@@ -2,7 +2,7 @@ using System;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Player
+namespace PlayerLib
 {
     [RequireComponent(typeof(RigidBody2dMover))]
     public class Player : MonoBehaviour
