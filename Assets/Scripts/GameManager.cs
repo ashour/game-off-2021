@@ -1,15 +1,16 @@
+using Player;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     private void OnEnable()
     {
-        Player.OnStateSwitched += TestEvent;
+        Player.Player.OnStateSwitched += TestEvent;
     }
 
     private void OnDisable()
     {
-        Player.OnStateSwitched -= TestEvent;
+        Player.Player.OnStateSwitched -= TestEvent;
     }
 
     private void TestEvent(PlayerState state)
