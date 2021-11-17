@@ -330,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/SFX/Player/Player Morph
-  PlayEvent: 11
+  PlayEvent: 12
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/SFX/Player/Player Morph
-  PlayEvent: 11
+  PlayEvent: 12
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
