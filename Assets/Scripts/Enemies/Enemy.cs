@@ -8,8 +8,6 @@ namespace Enemies
     [RequireComponent(typeof(HasHealth))]
     public class Enemy : MonoBehaviour
     {
-        [SerializeField] private EnemyState _vState;
-        [SerializeField] private EnemyState _bugState;
         [SerializeField] private EnemyState _currentState;
 
         public static Action<Enemy> OnEnemyDied;
@@ -37,23 +35,32 @@ namespace Enemies
 
         private void OnDestroy() => OnEnemyDied?.Invoke(this);
 
+        public void GoTo(EnemyState nextState)
+        {
+            _currentState.ExitState();
+            _currentState.Root.SetActive(false);
+
+            _currentState = nextState;
+
+            _currentState.Root.SetActive(true);
+            _currentState.EnterState();
+        }
+
         private void OnPlayerWillSwitchState(
             PlayerState currentPlayerState,
             PlayerState nextPlayerState)
         {
-            _currentState.ExitState();
-            _currentState.gameObject.SetActive(false);
-
-            _currentState = nextPlayerState switch
+            switch (nextPlayerState)
             {
-                PlayerVState => _vState,
-                PlayerBugState => _bugState,
-                _ => throw new ArgumentException(
-                    $"Unrecognized player state {nextPlayerState}")
-            };
-
-            _currentState.gameObject.SetActive(true);
-            _currentState.EnterState();
+                case PlayerBugState:
+                    _currentState.PlayerWillBecomeBug();
+                    break;
+                case PlayerVState:
+                    _currentState.PlayerWillBecomeV();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nextPlayerState));
+            }
         }
 
         private void Die()
@@ -62,5 +69,7 @@ namespace Enemies
         }
 
         public void Init() => _currentState.Init();
+
+        public void FirstEnter() => _currentState.FirstEnter();
     }
 }

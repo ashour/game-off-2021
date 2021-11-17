@@ -13,6 +13,7 @@ namespace Levels
             foreach (var spawn in spawns)
             {
                 var group = Instantiate(spawn.GroupPrefab);
+                group.Init();
                 group.gameObject.SetActive(false);
                 group.transform.position = spawn.SpawnPoint.position;
 
@@ -20,7 +21,7 @@ namespace Levels
                     .AppendCallback(() => group.gameObject.SetActive(true))
                     .Append(group.transform.DOMove(
                         spawn.DestinationPoint.position, _moveToDestinationDuration))
-                    .AppendCallback(() => group.Init());
+                    .AppendCallback(() => group.FirstEnter());
             }
         }
     }
