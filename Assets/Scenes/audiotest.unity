@@ -141,6 +141,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1445183014924611076, guid: 8f56000bccb33490da77ba198fb55706, type: 3}
+      propertyPath: Event
+      value: event:/Music/Musictest 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3365547463233496752, guid: 8f56000bccb33490da77ba198fb55706, type: 3}
       propertyPath: m_RootOrder
       value: 1
