@@ -17,8 +17,6 @@ namespace Enemies
         private void Awake()
         {
             _hasHealth = GetComponent<HasHealth>();
-
-            _currentState.EnterState();
         }
 
         private void OnEnable()
@@ -58,5 +56,7 @@ namespace Enemies
         {
             Destroy(gameObject);
         }
+
+        public void Init() => _currentState.Init();
     }
 }
