@@ -12,6 +12,8 @@ namespace Enemies
         [SerializeField] private EnemyState _bugState;
         [SerializeField] private EnemyState _currentState;
 
+        public static Action<Enemy> OnEnemyDied;
+
         private HasHealth _hasHealth;
 
         private void Awake()
@@ -32,6 +34,8 @@ namespace Enemies
 
             _hasHealth.OnDied -= Die;
         }
+
+        private void OnDestroy() => OnEnemyDied?.Invoke(this);
 
         private void OnPlayerWillSwitchState(
             PlayerState currentPlayerState,
