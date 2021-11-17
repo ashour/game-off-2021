@@ -18,5 +18,13 @@ namespace Enemies
                 enemy.Init();
             }
         }
+
+        public void FirstEnter()
+        {
+            foreach (var enemy in _enemies)
+            {
+                enemy.FirstEnter();
+            }
+        }
     }
 }
