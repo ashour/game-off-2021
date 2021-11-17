@@ -7,8 +7,6 @@ namespace Weapons
     {
         [SerializeField] private float _shotInterval = 3f;
 
-        [SerializeField] private float _warmUp = 3f;
-
         [SerializeField] private Cannon _cannon;
 
         private Coroutine _coroutine;
@@ -21,9 +19,9 @@ namespace Weapons
             }
         }
 
-        public void StartTimer()
+        public void StartTimer(float warmUp = 0)
         {
-            _coroutine = StartCoroutine(IntervalShoot());
+            _coroutine = StartCoroutine(IntervalShoot(warmUp));
         }
 
         public void StopTimer()
@@ -31,11 +29,11 @@ namespace Weapons
             StopCoroutine(_coroutine);
         }
 
-        private IEnumerator IntervalShoot()
+        private IEnumerator IntervalShoot(float warmUp)
         {
-            if (_warmUp > 0)
+            if (warmUp > 0)
             {
-                yield return new WaitForSeconds(_warmUp);
+                yield return new WaitForSeconds(warmUp);
             }
 
             while (true)
