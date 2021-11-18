@@ -467,7 +467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shotInterval: 3
-  _cannon: {fileID: 4208736504004503803}
+  _cannons:
+  - {fileID: 4208736504004503803}
 --- !u!1 &4208736504443116413
 GameObject:
   m_ObjectHideFlags: 0
