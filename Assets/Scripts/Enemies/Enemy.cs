@@ -33,8 +33,6 @@ namespace Enemies
             _hasHealth.OnDied -= Die;
         }
 
-        private void OnDestroy() => OnEnemyDied?.Invoke(this);
-
         public void GoTo(EnemyState nextState)
         {
             _currentState.ExitState();
@@ -65,6 +63,8 @@ namespace Enemies
 
         private void Die()
         {
+            OnEnemyDied?.Invoke(this);
+            
             Destroy(gameObject);
         }
 

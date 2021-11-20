@@ -1,7 +1,4 @@
-﻿using System;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemies
 {
@@ -23,7 +20,7 @@ namespace Enemies
         private void OnEnemyDied(Enemy enemy)
         {
             if (_enemy != enemy) { return; }
-            
+
             Instantiate(_hitEffect, transform.position, Quaternion.identity);
         }
     }
