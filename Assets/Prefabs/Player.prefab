@@ -524,8 +524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannons:
-  - {fileID: 2151531031747392909}
-  - {fileID: 5438757230250857540}
+  - {fileID: 968517213641271527}
+  - {fileID: 1786271114941602390}
   _coolDown: 0.1
 --- !u!1 &5792586616604506369
 GameObject:
@@ -763,7 +763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5406641483021743063}
-  - component: {fileID: 5438757230250857540}
+  - component: {fileID: 1786271114941602390}
   m_Layer: 6
   m_Name: 'R Cannon '
   m_TagString: Untagged
@@ -779,14 +779,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7280671695503455253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.384, y: 0.12, z: 0}
+  m_LocalPosition: {x: 0.384, y: 0.303, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5792586616550579778}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5438757230250857540
+--- !u!114 &1786271114941602390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7280671695503455253}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b06bb80600745fc90db7f1450a4a27e, type: 3}
+  m_Script: {fileID: 11500000, guid: a946b0c2ae874422b1e8ed385e5cf752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 618548228145324503, guid: 5d2dfd27273564a38a41ea6781c332aa, type: 3}
@@ -809,7 +809,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8205289238498839398}
-  - component: {fileID: 2151531031747392909}
+  - component: {fileID: 968517213641271527}
   m_Layer: 6
   m_Name: L Cannon
   m_TagString: Untagged
@@ -825,14 +825,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7690090269637762346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.395, y: 0.12, z: 0}
+  m_LocalPosition: {x: -0.395, y: 0.303, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5792586616550579778}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2151531031747392909
+--- !u!114 &968517213641271527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -841,7 +841,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7690090269637762346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b06bb80600745fc90db7f1450a4a27e, type: 3}
+  m_Script: {fileID: 11500000, guid: a946b0c2ae874422b1e8ed385e5cf752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 618548228145324503, guid: 5d2dfd27273564a38a41ea6781c332aa, type: 3}
