@@ -10,13 +10,15 @@ namespace Enemies
     {
         [SerializeField] private EnemyState _currentState;
 
-        public static Action<Enemy> OnEnemyDied;
+        public static Action<Enemy, int> OnEnemyDied;
+        private static int _enemyCount;
 
         private HasHealth _hasHealth;
 
         private void Awake()
         {
             _hasHealth = GetComponent<HasHealth>();
+            _enemyCount += 1;
         }
 
         private void OnEnable()
@@ -63,8 +65,9 @@ namespace Enemies
 
         private void Die()
         {
-            OnEnemyDied?.Invoke(this);
-            
+            _enemyCount -= 1;
+            OnEnemyDied?.Invoke(this, _enemyCount);
+
             Destroy(gameObject);
         }
 

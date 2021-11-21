@@ -6,7 +6,7 @@ namespace Enemies
     {
         [SerializeField] private Enemy _enemy;
         [SerializeField] private GameObject _hitEffect;
-        
+
         private void OnEnable()
         {
             Enemy.OnEnemyDied += OnEnemyDied;
@@ -16,8 +16,8 @@ namespace Enemies
         {
             Enemy.OnEnemyDied -= OnEnemyDied;
         }
-        
-        private void OnEnemyDied(Enemy enemy)
+
+        private void OnEnemyDied(Enemy enemy, int _)
         {
             if (_enemy != enemy) { return; }
 
