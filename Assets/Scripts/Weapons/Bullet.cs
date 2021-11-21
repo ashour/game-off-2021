@@ -7,19 +7,24 @@ namespace Weapons
     {
         private Rigidbody2D _body;
 
+        private float _rotationSpeed;
+
         private void Awake()
         {
             _body = GetComponent<Rigidbody2D>();
         }
 
-        public void Fire(Vector2 velocity)
+        private void FixedUpdate()
         {
-            _body.AddForce(velocity, ForceMode2D.Impulse);
+            if (_rotationSpeed == 0) { return; }
+
+            _body.rotation += _rotationSpeed * 100 * Time.fixedDeltaTime;
         }
 
-        public void Fire(float angle, float force)
+        public void Fire(Vector2 velocity, float rotationSpeed = 0)
         {
-
+            _body.AddForce(velocity, ForceMode2D.Impulse);
+            _rotationSpeed = rotationSpeed;
         }
     }
 }

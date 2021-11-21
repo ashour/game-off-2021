@@ -6,8 +6,10 @@ namespace Weapons.Cannons
     {
         private const float TwoPI = Mathf.PI * 2;
 
+        [Header("Bullets")]
         [SerializeField] private int _bulletCount = 1;
         [SerializeField] private float _fireForce = 1;
+        [SerializeField] private float _bulletRotationSpeed;
 
         [Header("Offsets")]
         [SerializeField] private bool _useAsGap;
@@ -68,7 +70,7 @@ namespace Weapons.Cannons
                         new Vector2(Mathf.Cos(theta), Mathf.Sin(theta)) *
                         _fireForce;
 
-                    MakeBullet().Fire(velocity);
+                    MakeBullet().Fire(velocity, _bulletRotationSpeed);
                 }
             }
         }
