@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Weapons
+namespace Weapons.Cannons
 {
     public class StraightFireCannon : Cannon
     {

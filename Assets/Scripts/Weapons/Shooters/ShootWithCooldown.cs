@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using Weapons.Cannons;
 
-namespace Weapons
+namespace Weapons.Shooters
 {
     public class ShootWithCooldown : MonoBehaviour
     {
