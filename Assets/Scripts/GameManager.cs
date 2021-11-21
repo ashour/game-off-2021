@@ -28,23 +28,4 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Level completed!");
     }
-
-    // private void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.J))
-    //     {
-    //         _background.Scroll(true);
-    //
-    //         var group = Instantiate(_enemySpawn.GroupPrefab);
-    //         group.gameObject.SetActive(false);
-    //         group.transform.position = _enemySpawn.SpawnPoint.position;
-    //
-    //         DOTween.Sequence()
-    //             .AppendInterval(3)
-    //             .AppendCallback(() => group.gameObject.SetActive(true))
-    //             .Append(group.transform.DOMove(
-    //                 _enemySpawn.DestinationPoint.position, 2))
-    //             .AppendCallback(() => group.Init());
-    //     }
-    // }
 }

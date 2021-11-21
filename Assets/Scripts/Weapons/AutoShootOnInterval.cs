@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Weapons
 {
-    public class ShootOnInterval : MonoBehaviour
+    public class AutoShootOnInterval : MonoBehaviour
     {
         [SerializeField] private float _shotInterval = 3f;
 
-        [SerializeField] private Cannon _cannon;
+        [SerializeField] private Cannon[] _cannons;
 
         private Coroutine _coroutine;
 
@@ -38,7 +38,10 @@ namespace Weapons
 
             while (true)
             {
-                _cannon.Fire();
+                foreach (var cannon in _cannons)
+                {
+                    cannon.Fire();
+                }
 
                 yield return new WaitForSeconds(_shotInterval);
             }

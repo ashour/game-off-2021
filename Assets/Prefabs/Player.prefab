@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5792586616550579778}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &6459907845172600639
 PolygonCollider2D:
@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 5792586616550579778}
   - component: {fileID: 5792586616550579777}
   - component: {fileID: 5792586616550579790}
+  - component: {fileID: 6911307853177958179}
   m_Layer: 6
   m_Name: V State
   m_TagString: Untagged
@@ -448,8 +449,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5792586615477064191}
-  - {fileID: 8205289238498839398}
   - {fileID: 9116329610607025036}
+  - {fileID: 8205289238498839398}
+  - {fileID: 5406641483021743063}
   m_Father: {fileID: 5792586616229590518}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -508,7 +510,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextState: {fileID: 5792586616604506379}
   _movementSpeed: 13
-  _cannon: {fileID: 2151531031747392909}
+  _shooter: {fileID: 6911307853177958179}
+--- !u!114 &6911307853177958179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792586616550579781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df012dea02254b80af9a056b146a34b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cannons:
+  - {fileID: 2151531031747392909}
+  - {fileID: 5438757230250857540}
+  _coolDown: 0.1
 --- !u!1 &5792586616604506369
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +754,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7280671695503455253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5406641483021743063}
+  - component: {fileID: 5438757230250857540}
+  m_Layer: 6
+  m_Name: 'R Cannon '
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5406641483021743063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7280671695503455253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.384, y: 0.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5792586616550579778}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5438757230250857540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7280671695503455253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b06bb80600745fc90db7f1450a4a27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 618548228145324503, guid: 5d2dfd27273564a38a41ea6781c332aa, type: 3}
+  _fireVelocity: {x: 0, y: 10}
 --- !u!1 &7690090269637762346
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,9 +811,9 @@ GameObject:
   - component: {fileID: 8205289238498839398}
   - component: {fileID: 2151531031747392909}
   m_Layer: 6
-  m_Name: Cannon
+  m_Name: L Cannon
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -761,12 +825,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7690090269637762346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.395, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5792586616550579778}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2151531031747392909
 MonoBehaviour:
