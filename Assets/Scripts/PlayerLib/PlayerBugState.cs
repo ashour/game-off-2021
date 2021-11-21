@@ -4,7 +4,7 @@ namespace PlayerLib
 {
     public class PlayerBugState : PlayerState
     {
-        public override void PrimaryAction()
+        public override void StartPrimaryAction()
         {
             Debug.Log("Bug is absorbing energy");
         }

@@ -1,15 +1,21 @@
 using UnityEngine;
 using Weapons;
+using Weapons.Shooters;
 
 namespace PlayerLib
 {
     public class PlayerVState : PlayerState
     {
-        [SerializeField] private Cannon _cannon;
+        [SerializeField] private ShootWithCooldown _shooter;
 
-        public override void PrimaryAction()
+        public override void StartPrimaryAction()
         {
-            _cannon.Fire();
+            _shooter.StartFire();
+        }
+
+        public override void EndPrimaryAction()
+        {
+            _shooter.EndFire();
         }
     }
 }

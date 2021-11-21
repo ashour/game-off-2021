@@ -43,10 +43,7 @@ namespace PlayerLib
 
         private void Update()
         {
-            if (_isTransitioning)
-            {
-                return;
-            }
+            if (_isTransitioning) { return; }
 
             _movement = new Vector2(
                 Input.GetAxisRaw("Horizontal"),
@@ -61,7 +58,11 @@ namespace PlayerLib
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                _currentState.PrimaryAction();
+                _currentState.StartPrimaryAction();
+            }
+            else if (Input.GetKeyUp(KeyCode.Space))
+            {
+                _currentState.EndPrimaryAction();
             }
         }
 

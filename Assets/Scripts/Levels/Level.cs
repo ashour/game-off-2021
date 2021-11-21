@@ -46,11 +46,10 @@ namespace Levels
             _spawner.Spawn(currentSection.Spawns);
         }
 
-        private void NextSectionIfCurrentSectionCompleted(Enemy _)
+        private void NextSectionIfCurrentSectionCompleted(
+            Enemy _, int enemyCount)
         {
-            var currentEnemyCount = FindObjectsOfType<Enemy>().Length;
-
-            if (currentEnemyCount == 0)
+            if (enemyCount == 0)
             {
                 StartCoroutine(NextSection());
             }
