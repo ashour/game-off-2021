@@ -16,5 +16,10 @@ namespace Weapons
         {
             _body.AddForce(velocity, ForceMode2D.Impulse);
         }
+
+        public void Fire(float angle, float force)
+        {
+
+        }
     }
 }

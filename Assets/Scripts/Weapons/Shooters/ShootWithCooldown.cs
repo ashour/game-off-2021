@@ -9,15 +9,24 @@ namespace Weapons.Shooters
         [SerializeField] private Cannon[] _cannons;
         [SerializeField] private float _coolDown = 0.2f;
 
-        private bool _isFiring;
         private float _timer;
+        private Coroutine _coroutine;
 
-        private IEnumerator Start()
+        public void StartFire()
+        {
+            _timer = 0;
+            _coroutine = StartCoroutine(ShootOnCooldown());
+        }
+
+        public void EndFire()
+        {
+            StopCoroutine(_coroutine);
+        }
+
+        private IEnumerator ShootOnCooldown()
         {
             while (true)
             {
-                yield return new WaitUntil(() => _isFiring);
-
                 if (_timer > 0)
                 {
                     yield return new WaitForSeconds(_timer);
@@ -30,17 +39,6 @@ namespace Weapons.Shooters
 
                 _timer = _coolDown;
             }
-        }
-
-        public void StartFire()
-        {
-            _isFiring = true;
-            _timer = 0;
-        }
-
-        public void EndFire()
-        {
-            _isFiring = false;
         }
     }
 }

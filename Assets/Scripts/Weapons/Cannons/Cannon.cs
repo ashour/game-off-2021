@@ -7,5 +7,11 @@ namespace Weapons.Cannons
         [SerializeField] protected Bullet _bulletPrefab;
 
         public abstract void Fire();
+
+        protected Bullet MakeBullet()
+        {
+            return Instantiate(
+                _bulletPrefab, transform.position, Quaternion.identity);
+        }
     }
 }
