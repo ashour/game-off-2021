@@ -1,10 +1,13 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class RigidBody2dMover : MonoBehaviour
+public class Rigidbody2DMover : MonoBehaviour
 {
     private Rigidbody2D _body;
+
+    [Tooltip("Whether to add to the configured base movement speed to the body")]
+    [SerializeField] private bool _usesBaseScrollSpeed;
+    [SerializeField] private GameConfig _config;
 
     private void Awake()
     {
@@ -13,8 +16,12 @@ public class RigidBody2dMover : MonoBehaviour
 
     public void Move(Vector2 direction, float speed)
     {
-        _body.MovePosition(
-            (Vector2)transform.position +
-            direction * (speed * Time.fixedDeltaTime));
+        var baseMovement = _usesBaseScrollSpeed
+            ? new Vector2(0, _config.AutoScrollSpeed * Time.fixedDeltaTime)
+            : Vector2.zero;
+
+        var addedMovement = direction * (speed * Time.fixedDeltaTime);
+
+        _body.MovePosition(_body.position + baseMovement + addedMovement);
     }
 }
