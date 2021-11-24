@@ -1,12 +1,9 @@
-using System;
-using DG.Tweening;
-using Enemies;
 using Levels;
+using Scrolling;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // [SerializeField] private EnemySpawn _enemySpawn;
     [SerializeField] private ScrollingBackground _background;
 
     private void Awake()

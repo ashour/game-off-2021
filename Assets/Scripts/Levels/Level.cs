@@ -39,8 +39,7 @@ namespace Levels
 
             if (currentSection.WarmUpDuration > 0)
             {
-                yield return new WaitForSeconds(
-                    currentSection.WarmUpDuration);
+                yield return new WaitForSeconds(currentSection.WarmUpDuration);
             }
 
             _spawner.Spawn(currentSection.Spawns);

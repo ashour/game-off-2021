@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 namespace PlayerLib
 {
     [RequireComponent(
-        typeof(RigidBody2dMover),
+        typeof(Rigidbody2DMover),
         typeof(HasHealth))]
     public class Player : MonoBehaviour
     {
@@ -22,12 +22,12 @@ namespace PlayerLib
         private Vector2 _movement;
         private bool _isTransitioning;
 
-        private RigidBody2dMover _mover;
+        private Rigidbody2DMover _mover;
         private HasHealth _hasHealth;
 
         private void Awake()
         {
-            _mover = GetComponent<RigidBody2dMover>();
+            _mover = GetComponent<Rigidbody2DMover>();
             _hasHealth = GetComponent<HasHealth>();
         }
 
