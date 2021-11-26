@@ -1,4 +1,5 @@
 using System;
+using AI;
 using Health;
 using PlayerLib;
 using UnityEngine;
@@ -9,6 +10,8 @@ namespace Enemies
     public class Enemy : MonoBehaviour
     {
         [SerializeField] private EnemyState _currentState;
+
+        private EnemySequence _sequence;
 
         public static Action<Enemy, int> OnEnemyDied;
         private static int _enemyCount;
@@ -44,6 +47,8 @@ namespace Enemies
 
             _currentState.Root.SetActive(true);
             _currentState.EnterState();
+            _sequence.SetMover(_currentState.Mover);
+            _sequence.SetShooter(_currentState.IntervalShooter);
         }
 
         private void OnPlayerWillSwitchState(
@@ -63,16 +68,21 @@ namespace Enemies
             }
         }
 
-        private void Die()
+        public void Init(EnemySequence sequence)
+        {
+            _sequence = sequence;
+            _currentState.Init();
+            _sequence.Init(_currentState.IntervalShooter, _currentState.Mover);
+        }
+
+        public void FirstEnter() => _currentState.FirstEnter();
+
+        public void Die()
         {
             _enemyCount -= 1;
             OnEnemyDied?.Invoke(this, _enemyCount);
 
             Destroy(gameObject);
         }
-
-        public void Init() => _currentState.Init();
-
-        public void FirstEnter() => _currentState.FirstEnter();
     }
 }

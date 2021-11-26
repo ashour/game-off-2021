@@ -1,7 +1,9 @@
+using AI;
 using UnityEngine;
 
 namespace Enemies
 {
+    //TODO make single enemy not group
     public class EnemyGroup : MonoBehaviour
     {
         private Enemy[] _enemies;
@@ -11,11 +13,11 @@ namespace Enemies
             _enemies = GetComponentsInChildren<Enemy>();
         }
 
-        public void Init()
+        public void Init(EnemySequence sequence)
         {
             foreach (var enemy in _enemies)
             {
-                enemy.Init();
+                enemy.Init(sequence);
             }
         }
 

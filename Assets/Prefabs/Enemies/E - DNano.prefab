@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: 7900072594049430055}
+  _intervalShooter: {fileID: 0}
+  _mover: {fileID: 0}
   _onInstanced:
     m_PersistentCalls:
       m_Calls: []
@@ -120,6 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: 4208736503468655497}
+  _intervalShooter: {fileID: 4208736504004503800}
+  _mover: {fileID: 3494758680998259585}
   _onInstanced:
     m_PersistentCalls:
       m_Calls: []
@@ -146,19 +150,7 @@ MonoBehaviour:
         m_CallState: 2
   _onEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4208736504004503800}
-        m_TargetAssemblyTypeName: Weapons.ShootOnInterval, Assembly-CSharp
-        m_MethodName: StartTimer
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onExit:
     m_PersistentCalls:
       m_Calls: []
@@ -205,9 +197,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4208736503468655496}
+  - component: {fileID: 9072931000692974019}
   - component: {fileID: 6553325774820865376}
   - component: {fileID: 4208736503468655498}
   - component: {fileID: 2176137545552230747}
+  - component: {fileID: 3494758680998259585}
+  - component: {fileID: 7958573324125324512}
   m_Layer: 13
   m_Name: V Root
   m_TagString: Untagged
@@ -232,6 +227,27 @@ Transform:
   m_Father: {fileID: 8186022086493684817}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &9072931000692974019
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4208736503468655497}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!60 &6553325774820865376
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -332,6 +348,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   _destroyOnDamage: 0
+--- !u!114 &3494758680998259585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4208736503468655497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616e903c0bdd84ed38136bc1a99f5dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _usesBaseScrollSpeed: 1
+  _config: {fileID: 11400000, guid: 4de4b0da35c2443738fae039f7c1b3f3, type: 2}
+--- !u!114 &7958573324125324512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4208736503468655497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6774189b9c5b4525baa9b7249defc852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 1
+  _currentHealth: 0
 --- !u!1 &4208736504002318261
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +391,7 @@ GameObject:
   - component: {fileID: 1527519621658400371}
   m_Layer: 0
   m_Name: E - DNano
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -613,21 +657,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: 4208736503468655497}
+  _intervalShooter: {fileID: 0}
+  _mover: {fileID: 0}
   _onInstanced:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4208736504004503800}
-        m_TargetAssemblyTypeName: Weapons.ShootOnInterval, Assembly-CSharp
-        m_MethodName: StartTimer
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onFirstEnter:
     m_PersistentCalls:
       m_Calls:
@@ -700,7 +734,6 @@ GameObject:
   - component: {fileID: 1595065553565326082}
   - component: {fileID: 6592276490772964408}
   - component: {fileID: 3522316973971934471}
-  - component: {fileID: 6285413094196128206}
   m_Layer: 12
   m_Name: Bug Root
   m_TagString: Untagged
@@ -824,37 +857,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   _destroyOnDamage: 0
---- !u!114 &6285413094196128206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7900072594049430055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0201260500747989d2a9a5148bc256a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _root: {fileID: 0}
-  _onInstanced:
-    m_PersistentCalls:
-      m_Calls: []
-  _onFirstEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  _onPlayerWillBecomeV:
-    m_PersistentCalls:
-      m_Calls: []
-  _onPlayerWillBecomeBug:
-    m_PersistentCalls:
-      m_Calls: []
-  _onEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  _onExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &9039185910739621398
 GameObject:
   m_ObjectHideFlags: 0
