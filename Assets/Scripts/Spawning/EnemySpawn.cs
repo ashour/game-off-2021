@@ -1,14 +1,15 @@
 using System;
+using Enemies;
 using UnityEngine;
+
 // ReSharper disable InconsistentNaming
 
-namespace Enemies
+namespace Spawning
 {
     [Serializable]
     public class EnemySpawn
     {
         public EnemyGroup GroupPrefab;
         public Transform SpawnPoint;
-        public Transform DestinationPoint;
     }
 }

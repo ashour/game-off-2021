@@ -22,7 +22,7 @@ TagManager:
   - PlayerAreaBlocker
   - BulletDestroyer
   - PlayerHurtbox
-  - 
+  - EnemySpawnTrigger
   - 
   - 
   - 

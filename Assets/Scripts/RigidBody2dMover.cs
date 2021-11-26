@@ -20,8 +20,20 @@ public class Rigidbody2DMover : MonoBehaviour
             ? new Vector2(0, _config.AutoScrollSpeed * Time.fixedDeltaTime)
             : Vector2.zero;
 
-        var addedMovement = direction * (speed * Time.fixedDeltaTime);
+        var addedMovement = direction.normalized * (speed * Time.fixedDeltaTime);
 
         _body.MovePosition(_body.position + baseMovement + addedMovement);
+    }
+
+    public void MoveTowards(Vector2 position, float speed)
+    {
+        var direction = position - _body.position;
+
+        Move(direction, speed);
+    }
+
+    public bool HasReached(Vector2 position)
+    {
+        return Vector2.Distance(_body.position, position) <= 0.25f;
     }
 }
